@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RemontV2.Models;
+using RemontV2.Views;
+using RemontV2.Utils;
 
 namespace RemontV2.Views
 {
@@ -20,12 +22,12 @@ namespace RemontV2.Views
 
         public void GenerateDataToEmployeeCard(Сотрудник employee)
         {
-            employeepictureBox.ImageLocation = Сотрудник.Фото;
-            employeeNameLbl.Text = Сотрудник.Роль.Наименование + " | " + Сотрудник.ФИО;
-            genderLbl.Text = Сотрудник.Пол.ToString();
-            phoneLbl.Text = Сотрудник.Контактный_телефон.ToString();
-            positionLbl.Text = Сотрудник.Должность.ToString();
-            emailLbl.Text = Сотрудник.Email.ToString();
+            employeepictureBox.ImageLocation = employee.Фото;
+            employeeNameLbl.Text = employee.Роль.Наименование + " | " + employee.ФИО;
+            genderLbl.Text = employee.Пол.ToString();
+            phoneLbl.Text = employee.Контактный_телефон.ToString();
+            positionLbl.Text = employee.Должность.ToString();
+            emailLbl.Text = employee.Email.ToString();
            
         }
 
