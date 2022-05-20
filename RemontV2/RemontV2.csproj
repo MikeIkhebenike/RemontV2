@@ -129,6 +129,9 @@
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RemontV2.Models.Авторизация.datasource" />
+    <None Include="Properties\DataSources\RemontV2.Models.Роль.datasource" />
+    <None Include="Properties\DataSources\RemontV2.Models.Сотрудник.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

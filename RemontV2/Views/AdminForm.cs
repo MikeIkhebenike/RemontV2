@@ -140,5 +140,10 @@ namespace RemontV2.Views
         {
             ExitBtn.BackColor = Color.FromArgb(153, 180, 209);
         }
+
+        private void ShutDownBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

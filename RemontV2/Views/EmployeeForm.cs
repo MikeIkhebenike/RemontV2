@@ -27,9 +27,23 @@ namespace RemontV2.Views
         {
             var allType = DatabaseContext.db.Роль.Select(type => type.Наименование).ToList();
             allType.Insert(0, "Все роли");
-            filterComboBox.DataSource = allType;
-            filterComboBox.SelectedIndex = 0;
-            sortComboBox.SelectedIndex = 0;
+            FiltrCombo.DataSource = allType;
+            FiltrCombo.SelectedIndex = 0;
+            SortCombo.SelectedIndex = 0;
+            // устанавливаем тип сортировки - "Без сортировка"
+            
+            // загружаем список ФИО 
+            List<string> lstTypes = DatabaseContext.db.Сотрудник.Select(a => a.Пол).ToList();
+            lstTypes.Insert(0, "Любой пол");
+            // передаем данные фильтру
+            FiltrCombo.DataSource = lstTypes;
+
+            employeeBindingSource.DataSource = DatabaseContext.db.Сотрудник.ToList();
+            roleBindingSource.DataSource = DatabaseContext.db.Роль.ToList();
+            authorizeBindingSource.DataSource = DatabaseContext.db.Авторизация.ToList();
+
+            // подготавливаем данные для показа
+            PodgotovkaData();
         }
         private void GenerateEmployeeCardList(List<Сотрудник> employee)
         {
@@ -82,27 +96,27 @@ namespace RemontV2.Views
         {
             var listUpdate = DatabaseContext.db.Сотрудник.ToList();
             // Filter
-            if (filterComboBox.SelectedIndex > 0)
+            if (FiltrCombo.SelectedIndex > 0)
             {
                 listUpdate = listUpdate
-                    .Where(type => type.Роль.Наименование == filterComboBox.SelectedItem
+                    .Where(type => type.Роль.Наименование == FiltrCombo.SelectedItem
                     .ToString())
                     .ToList();
             }
 
             // Search
-            if (searchTextBox.Text != "Введите для поиска" && !string.IsNullOrWhiteSpace(searchTextBox.Text))
+            if (SearchTxt.Text != "Введите для поиска" && !string.IsNullOrWhiteSpace(SearchTxt.Text))
             {
                 listUpdate = listUpdate
                     .Where(x => x.ФИО.ToLower()
-                    .Contains(searchTextBox.Text
+                    .Contains(SearchTxt.Text
                     .ToLower()) || x.Контактный_телефон
-                    .Contains(searchTextBox.Text) || x.Email.ToLower()
-                    .Contains(searchTextBox.Text.ToLower())).ToList();
+                    .Contains(SearchTxt.Text) || x.Email.ToLower()
+                    .Contains(SearchTxt.Text.ToLower())).ToList();
             }
 
             // Sort
-            if (sortComboBox.Text == "ФИО")
+            if (SortCombo.Text == "ФИО")
             {
                 if (!descCheckBox.Checked)
                 {
@@ -113,7 +127,7 @@ namespace RemontV2.Views
                     listUpdate = listUpdate.OrderByDescending(x => x.ФИО).ToList();
                 }
             }
-            if (sortComboBox.Text == "Роль")
+            if (SortCombo.Text == "Роль")
             {
                 if (!descCheckBox.Checked)
                 {
@@ -128,27 +142,76 @@ namespace RemontV2.Views
             GenerateEmployeeCardList(listUpdate);
         }
 
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
-        {
+        string filtr = "Любой пол"; // фильтр показа продукции;
+        string sort = "ФИО"; // сортировки продукции
+        string sortDirection = "возрастание"; // направление сортировки
+        string search = "";  // поиск по наименованию и описанию
 
-        }
-
-        private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        ////////////////////////////////////////////////////////
+        //  Подготовка данных для показа 
+        //  выполнение фильтрации, поиска и сортировки
+        public void PodgotovkaData()
         {
-            flowLayoutPanel1.Controls.Clear();
-            SortListView();
-        }
+            // вначале выбираем все товары
+            employee = DatabaseContext.db.Сотрудник.ToList();
 
-        private void descCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            flowLayoutPanel1.Controls.Clear();
-            SortListView();
-        }
+            /////////////////////////////////////////////            
+            // фильтрация по типам товаров
+            if (filtr != "Любой пол")
+            {
+                // отбираем только по заданному производителю
+                employee = employee.Where(p => (p.Пол == filtr)).ToList();
+            }
+            /////////////////////////////////////////////
+            // поиск по заданной строке
+            if (search != "")
+            {   // отбираем товары с заданной строкой в названии
+                search = search.ToUpper();
+                // поиск с учетом регистра
+                // ToUpper() для пустой строки не срабатывает
+                employee = employee
+                    .Where(p => (p.Пол.ToUpper().Contains(search)) ||
+                        (p.Должность != null && // есть описание ?
+                         p.Должность.ToUpper().Contains(search)))
+                    .ToList();
+            }
+            /////////////////////////////////////////////
+            // сортировка по разным полям
+            if (sort != "Без сортировки")
+            {
+                if (sort == "ФИО")
+                {   // сортируем отобранные товары по наименованию
+                    if (sortDirection == "возрастание")
+                        employee = employee.OrderBy(p => p.ФИО).ToList();
+                    else
+                        employee = employee.
+                            OrderByDescending(p => p.ФИО).ToList();
+                }
+                if (sort == "Номер роли")
+                {
+                    if (sort == "Номер роли")
+                    {   // сортируем отобранные товары по наименованию
+                        if (sortDirection == "возрастание")
+                            employee = employee.OrderBy(p => p.ID_роли).ToList();
+                        else
+                            employee = employee.
+                                OrderByDescending(p => p.ID_роли).ToList();
+                    }
+                }
+                if (sort == "Должность")
+                {   // сортируем отобранные товары по наименованию
+                    if (sortDirection == "возрастание")
+                        employee = employee.OrderBy(p => p.Должность).ToList();
+                    else
+                        employee = employee.
+                                OrderByDescending(p => p.Должность).ToList();
+                }
+            }
 
-        private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            flowLayoutPanel1.Controls.Clear();
-            SortListView();
+            /////////////////////////////////////////////////
+            // показываем данные (все или одну страницу)
+            ShowCurrentPage();
+
         }
 
         private void changePriorityBtn_Click(object sender, EventArgs e)
@@ -156,6 +219,42 @@ namespace RemontV2.Views
             //ChangePriorityForm changePriorityForm = new ChangePriorityForm();
             //    DialogResult dialogResult = changePriorityForm.ShowDialog();
             //    SortListView();
+        }
+
+        private void searchTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+            search = SearchTxt.Text;
+            PodgotovkaData();
+        }
+
+        private void sortComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            sort = SearchTxt.Text;
+            PodgotovkaData();
+        }
+
+        private void descCheckBox_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (descCheckBox.Checked)
+                sortDirection = "убывание";
+            else
+                sortDirection = "возрастание";
+
+            PodgotovkaData();
+        }
+
+        private void filterComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            filtr = FiltrCombo.Text;
+            PodgotovkaData();
+        }
+
+        private void ShowCurrentPage()
+        {
+            //////////////////////////////////////////////////////////////////
+            // в данной версии просто передаем данные промежуточному элементу
+            // 
+            employeeBindingSource.DataSource = employee;
         }
 
 

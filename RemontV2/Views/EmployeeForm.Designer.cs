@@ -28,18 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.changePriorityBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.descCheckBox = new System.Windows.Forms.CheckBox();
-            this.filterComboBox = new System.Windows.Forms.ComboBox();
-            this.sortComboBox = new System.Windows.Forms.ComboBox();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.FiltrCombo = new System.Windows.Forms.ComboBox();
+            this.SortCombo = new System.Windows.Forms.ComboBox();
+            this.SearchTxt = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.changePriorityBtn = new System.Windows.Forms.Button();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.authorizeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.authorizeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -51,15 +58,59 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.SearchTxt);
             this.panel1.Controls.Add(this.descCheckBox);
-            this.panel1.Controls.Add(this.filterComboBox);
-            this.panel1.Controls.Add(this.sortComboBox);
-            this.panel1.Controls.Add(this.searchTextBox);
+            this.panel1.Controls.Add(this.FiltrCombo);
+            this.panel1.Controls.Add(this.SortCombo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(765, 57);
             this.panel1.TabIndex = 1;
+            // 
+            // descCheckBox
+            // 
+            this.descCheckBox.AutoSize = true;
+            this.descCheckBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.descCheckBox.Location = new System.Drawing.Point(375, 14);
+            this.descCheckBox.Name = "descCheckBox";
+            this.descCheckBox.Size = new System.Drawing.Size(157, 26);
+            this.descCheckBox.TabIndex = 6;
+            this.descCheckBox.Text = "По убыванию";
+            this.descCheckBox.UseVisualStyleBackColor = true;
+            this.descCheckBox.CheckedChanged += new System.EventHandler(this.descCheckBox_CheckedChanged_1);
+            // 
+            // FiltrCombo
+            // 
+            this.FiltrCombo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FiltrCombo.FormattingEnabled = true;
+            this.FiltrCombo.Location = new System.Drawing.Point(597, 12);
+            this.FiltrCombo.Name = "FiltrCombo";
+            this.FiltrCombo.Size = new System.Drawing.Size(135, 30);
+            this.FiltrCombo.TabIndex = 7;
+            this.FiltrCombo.SelectedIndexChanged += new System.EventHandler(this.filterComboBox_SelectedIndexChanged_1);
+            // 
+            // SortCombo
+            // 
+            this.SortCombo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SortCombo.FormattingEnabled = true;
+            this.SortCombo.Items.AddRange(new object[] {
+            "Наименоание",
+            "Приоритет"});
+            this.SortCombo.Location = new System.Drawing.Point(12, 12);
+            this.SortCombo.Name = "SortCombo";
+            this.SortCombo.Size = new System.Drawing.Size(146, 30);
+            this.SortCombo.TabIndex = 5;
+            this.SortCombo.SelectedIndexChanged += new System.EventHandler(this.sortComboBox_SelectedIndexChanged_1);
+            // 
+            // SearchTxt
+            // 
+            this.SearchTxt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SearchTxt.Location = new System.Drawing.Point(199, 12);
+            this.SearchTxt.Name = "SearchTxt";
+            this.SearchTxt.Size = new System.Drawing.Size(170, 31);
+            this.SearchTxt.TabIndex = 4;
+            this.SearchTxt.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged_1);
             // 
             // panel2
             // 
@@ -71,6 +122,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(765, 69);
             this.panel2.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(367, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(135, 48);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Изменить приоритет на...";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(199, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 48);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Изменить приоритет на...";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             // 
             // changePriorityBtn
             // 
@@ -85,69 +160,17 @@
             this.changePriorityBtn.Visible = false;
             this.changePriorityBtn.Click += new System.EventHandler(this.changePriorityBtn_Click);
             // 
-            // button1
+            // employeeBindingSource
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(199, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 48);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Изменить приоритет на...";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
+            this.employeeBindingSource.DataSource = typeof(RemontV2.Models.Сотрудник);
             // 
-            // button2
+            // authorizeBindingSource
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(367, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 48);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Изменить приоритет на...";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Visible = false;
+            this.authorizeBindingSource.DataSource = typeof(RemontV2.Models.Авторизация);
             // 
-            // descCheckBox
+            // roleBindingSource
             // 
-            this.descCheckBox.AutoSize = true;
-            this.descCheckBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.descCheckBox.Location = new System.Drawing.Point(422, 14);
-            this.descCheckBox.Name = "descCheckBox";
-            this.descCheckBox.Size = new System.Drawing.Size(157, 26);
-            this.descCheckBox.TabIndex = 6;
-            this.descCheckBox.Text = "По убыванию";
-            this.descCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // filterComboBox
-            // 
-            this.filterComboBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(627, 12);
-            this.filterComboBox.Name = "filterComboBox";
-            this.filterComboBox.Size = new System.Drawing.Size(135, 30);
-            this.filterComboBox.TabIndex = 7;
-            // 
-            // sortComboBox
-            // 
-            this.sortComboBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sortComboBox.FormattingEnabled = true;
-            this.sortComboBox.Items.AddRange(new object[] {
-            "Наименоание",
-            "Приоритет"});
-            this.sortComboBox.Location = new System.Drawing.Point(241, 12);
-            this.sortComboBox.Name = "sortComboBox";
-            this.sortComboBox.Size = new System.Drawing.Size(163, 30);
-            this.sortComboBox.TabIndex = 5;
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.searchTextBox.Location = new System.Drawing.Point(12, 12);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(211, 31);
-            this.searchTextBox.TabIndex = 4;
+            this.roleBindingSource.DataSource = typeof(RemontV2.Models.Роль);
             // 
             // EmployeeForm
             // 
@@ -165,6 +188,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.authorizeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,8 +204,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button changePriorityBtn;
         private System.Windows.Forms.CheckBox descCheckBox;
-        private System.Windows.Forms.ComboBox filterComboBox;
-        private System.Windows.Forms.ComboBox sortComboBox;
-        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.ComboBox FiltrCombo;
+        private System.Windows.Forms.ComboBox SortCombo;
+        private System.Windows.Forms.TextBox SearchTxt;
+        private System.Windows.Forms.BindingSource employeeBindingSource;
+        private System.Windows.Forms.BindingSource authorizeBindingSource;
+        private System.Windows.Forms.BindingSource roleBindingSource;
     }
 }

@@ -70,6 +70,7 @@
             // 
             // employeepictureBox
             // 
+            this.employeepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.employeepictureBox.Image = global::RemontV2.Properties.Resources.picture;
             this.employeepictureBox.Location = new System.Drawing.Point(6, 5);
             this.employeepictureBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);

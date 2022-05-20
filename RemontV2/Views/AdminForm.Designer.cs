@@ -43,7 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ShutDownBtn = new System.Windows.Forms.Button();
             this.PnlFormLoad = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -254,18 +254,19 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Список сотрудников";
             // 
-            // button1
+            // ShutDownBtn
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(914, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 31);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ShutDownBtn.FlatAppearance.BorderSize = 0;
+            this.ShutDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShutDownBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShutDownBtn.ForeColor = System.Drawing.Color.Red;
+            this.ShutDownBtn.Location = new System.Drawing.Point(914, 12);
+            this.ShutDownBtn.Name = "ShutDownBtn";
+            this.ShutDownBtn.Size = new System.Drawing.Size(25, 31);
+            this.ShutDownBtn.TabIndex = 2;
+            this.ShutDownBtn.Text = "X";
+            this.ShutDownBtn.UseVisualStyleBackColor = true;
+            this.ShutDownBtn.Click += new System.EventHandler(this.ShutDownBtn_Click);
             // 
             // PnlFormLoad
             // 
@@ -282,7 +283,7 @@
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.PnlFormLoad);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ShutDownBtn);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -318,7 +319,7 @@
         private System.Windows.Forms.Button WorksBtn;
         private System.Windows.Forms.Panel PnlNav;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ShutDownBtn;
         private System.Windows.Forms.Panel PnlFormLoad;
     }
 }
