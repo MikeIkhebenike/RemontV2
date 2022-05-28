@@ -14,6 +14,7 @@ namespace RemontV2.Views
 
         public void GenerateDataToAccessoriesCard(Комплектующее accessories)
         {
+            label1.Text = accessories.Наименование;
             pictureBox1.ImageLocation = accessories.Изображение;
             supplierNameLbl.Text = accessories.Поставщик.Наименование + " | " + accessories.Наименование;
             qtyStockLbl.Text =  accessories.КоличествоВналич.ToString() + " в наличии";

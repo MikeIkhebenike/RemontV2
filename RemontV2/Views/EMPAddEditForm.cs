@@ -16,7 +16,6 @@ namespace RemontV2.Views
     public partial class EMPAddEditForm : Form
     {
         Сотрудник currentEmployee = new Сотрудник();
-        public static Авторизация auth { get; set; }
         public EMPAddEditForm()
         {
             InitializeComponent();
@@ -69,7 +68,7 @@ namespace RemontV2.Views
             StringBuilder errors = new StringBuilder();
             if (string.IsNullOrWhiteSpace(currentEmployee.ФИО))
             {
-                errors.AppendLine("Укажите Фамилию Имя и Отчество агента через пробел");
+                errors.AppendLine("Укажите Фамилию Имя и Отчество сотрудника через пробел");
             }
             if (string.IsNullOrWhiteSpace(currentEmployee.Контактный_телефон))
             {
@@ -97,38 +96,7 @@ namespace RemontV2.Views
             this.Close();
         }
 
-        private void saveUserBtn_Click(object sender, EventArgs e)
-        {
-            //StringBuilder errors = new StringBuilder();
-            //if (string.IsNullOrWhiteSpace(currentEmployee.Авторизация.))
-            //{
-            //    errors.AppendLine("Укажите Фамилию Имя и Отчество агента через пробел");
-            //}
-            //if (string.IsNullOrWhiteSpace(currentEmployee.Контактный_телефон))
-            //{
-            //    errors.AppendLine("Укажите телефон");
-            //}
-            //if (errors.Length > 0)
-            //{
-            //    MessageBox.Show(errors.ToString());
-            //    return;
-            //}
 
-            //if (currentEmployee.ID_сотрудника == 0)
-            //{
-            //    DatabaseContext.db.Сотрудник.Add(currentEmployee);
-            //}
-            //try
-            //{
-            //    DatabaseContext.db.SaveChanges();
-            //    MessageBox.Show("Информация сохранена");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message.ToString());
-            //}
-            
-        }
     }
 }
 

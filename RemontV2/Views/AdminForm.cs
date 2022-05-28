@@ -118,6 +118,15 @@ namespace RemontV2.Views
 
             lblTitle.Text = "Список работ";
             this.NewFormPanelLoader.Controls.Clear();
+            WorksForm WrkForm = new WorksForm()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+            WrkForm.FormBorderStyle = FormBorderStyle.None;
+            this.NewFormPanelLoader.Controls.Add(WrkForm);
+            WrkForm.Show();
         }
 
         private void SuppliersBtn_Click(object sender, EventArgs e)
@@ -149,6 +158,15 @@ namespace RemontV2.Views
 
             lblTitle.Text = "Список запросов на поставку";
             this.NewFormPanelLoader.Controls.Clear();
+            ListOfReqsForm ListReqsPanel = new ListOfReqsForm()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+            ListReqsPanel.FormBorderStyle = FormBorderStyle.None;
+            this.NewFormPanelLoader.Controls.Add(ListReqsPanel);
+            ListReqsPanel.Show();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

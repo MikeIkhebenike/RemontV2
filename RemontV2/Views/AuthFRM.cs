@@ -38,14 +38,14 @@ namespace RemontV2
                     MessageBox.Show("Добро пожаловать в форму администратора!");
                 }
 
-                //else if (UFN.Сотрудник.ID_роли == 2)
-                //{
-                //    //LoggedRole = "2";
-                //    Manager FRMmang = new Manager();
-                //    FRMmang.Show();
-                //    this.Hide();
-                //    MessageBox.Show("Добро пожаловать в форму менеджера!");
-                //}
+                else if (UFN.Сотрудник.ID_роли == 2)
+                {
+                    //LoggedRole = "2";
+                    ManagerForm FRMmang = new ManagerForm();
+                    FRMmang.Show();
+                    this.Hide();
+                    MessageBox.Show("Добро пожаловать в форму менеджера!");
+                }
 
                 //else if (UFN.Сотрудник.ID_роли == 3)
                 //{
@@ -64,16 +64,14 @@ namespace RemontV2
             }
         }
 
-        private void ExitBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void LoginTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
 
-
+        private void ShutDownBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxEye = new System.Windows.Forms.PictureBox();
+            this.ShutDownBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEye)).BeginInit();
@@ -80,6 +81,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.ShutDownBtn);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -154,6 +156,7 @@
             this.PassTxt.Location = new System.Drawing.Point(113, 216);
             this.PassTxt.Margin = new System.Windows.Forms.Padding(6);
             this.PassTxt.Name = "PassTxt";
+            this.PassTxt.PasswordChar = '*';
             this.PassTxt.Size = new System.Drawing.Size(292, 31);
             this.PassTxt.TabIndex = 19;
             // 
@@ -189,6 +192,20 @@
             this.pictureBoxEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxEye.TabIndex = 23;
             this.pictureBoxEye.TabStop = false;
+            // 
+            // ShutDownBtn
+            // 
+            this.ShutDownBtn.FlatAppearance.BorderSize = 0;
+            this.ShutDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShutDownBtn.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShutDownBtn.ForeColor = System.Drawing.Color.Red;
+            this.ShutDownBtn.Location = new System.Drawing.Point(435, 1);
+            this.ShutDownBtn.Name = "ShutDownBtn";
+            this.ShutDownBtn.Size = new System.Drawing.Size(42, 48);
+            this.ShutDownBtn.TabIndex = 21;
+            this.ShutDownBtn.Text = "X";
+            this.ShutDownBtn.UseVisualStyleBackColor = true;
+            this.ShutDownBtn.Click += new System.EventHandler(this.ShutDownBtn_Click);
             // 
             // AuthFRM
             // 
@@ -237,6 +254,7 @@
         private System.Windows.Forms.TextBox PassTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ShutDownBtn;
     }
 }
 

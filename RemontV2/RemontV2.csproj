@@ -12,6 +12,22 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\micha.DESKTOP-D9J3VNP\Desktop\Диплом\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +47,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>AE633A9A9CF12273853CDEA3B0D0127C35FB852F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>RemontV2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -56,6 +84,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utils\DatabaseContext.cs" />
+    <Compile Include="Views\AccessoriesAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AccessoriesAddEditForm.Designer.cs">
+      <DependentUpon>AccessoriesAddEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AccessoriesCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +131,12 @@
     <Compile Include="Models\Услуга.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ChangeListOfReqsCloseDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChangeListOfReqsCloseDateForm.Designer.cs">
+      <DependentUpon>ChangeListOfReqsCloseDateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChangePlaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +148,18 @@
     </Compile>
     <Compile Include="Views\ChangePriceForm.Designer.cs">
       <DependentUpon>ChangePriceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangeReqCloseDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChangeReqCloseDateForm.Designer.cs">
+      <DependentUpon>ChangeReqCloseDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangeStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChangeStatusForm.Designer.cs">
+      <DependentUpon>ChangeStatusForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\EMPAddEditForm.cs">
       <SubType>Form</SubType>
@@ -126,6 +178,30 @@
     </Compile>
     <Compile Include="Views\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListOfReqsAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListOfReqsAddEditForm.Designer.cs">
+      <DependentUpon>ListOfReqsAddEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListOfReqsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ListOfReqsForm.Designer.cs">
+      <DependentUpon>ListOfReqsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListOfRequestsCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ListOfRequestsCard.Designer.cs">
+      <DependentUpon>ListOfRequestsCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\RequestAddEditForm.cs">
       <SubType>Form</SubType>
@@ -163,6 +239,12 @@
     <Compile Include="Views\SuppliersForm.Designer.cs">
       <DependentUpon>SuppliersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\WorkAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WorkAddEditForm.Designer.cs">
+      <DependentUpon>WorkAddEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\WorkCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +267,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\AccessoriesAddEditForm.resx">
+      <DependentUpon>AccessoriesAddEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AccessoriesCard.resx">
       <DependentUpon>AccessoriesCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,8 +282,20 @@
     <EmbeddedResource Include="Views\AuthFRM.resx">
       <DependentUpon>AuthFRM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChangeListOfReqsCloseDateForm.resx">
+      <DependentUpon>ChangeListOfReqsCloseDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChangePlaceForm.resx">
+      <DependentUpon>ChangePlaceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ChangePriceForm.resx">
       <DependentUpon>ChangePriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChangeReqCloseDateForm.resx">
+      <DependentUpon>ChangeReqCloseDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChangeStatusForm.resx">
+      <DependentUpon>ChangeStatusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EMPAddEditForm.resx">
       <DependentUpon>EMPAddEditForm.cs</DependentUpon>
@@ -209,17 +306,38 @@
     <EmbeddedResource Include="Views\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListOfReqsAddEditForm.resx">
+      <DependentUpon>ListOfReqsAddEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListOfReqsForm.resx">
+      <DependentUpon>ListOfReqsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ListOfRequestsCard.resx">
+      <DependentUpon>ListOfRequestsCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RequestAddEditForm.resx">
+      <DependentUpon>RequestAddEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\RequestCard.resx">
       <DependentUpon>RequestCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\RequestsForm.resx">
       <DependentUpon>RequestsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SupplierAddEdit.resx">
+      <DependentUpon>SupplierAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SuppliersCard.resx">
       <DependentUpon>SuppliersCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SuppliersForm.resx">
       <DependentUpon>SuppliersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkAddEditForm.resx">
+      <DependentUpon>WorkAddEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\WorkCard.resx">
       <DependentUpon>WorkCard.cs</DependentUpon>
@@ -229,8 +347,15 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\RemontV2.Models.Авторизация.datasource" />
+    <None Include="Properties\DataSources\RemontV2.Models.Заявка.datasource" />
+    <None Include="Properties\DataSources\RemontV2.Models.ЗаявкаНаПоставку.datasource" />
+    <None Include="Properties\DataSources\RemontV2.Models.Комплектующее.datasource" />
+    <None Include="Properties\DataSources\RemontV2.Models.Поставщик.datasource" />
+    <None Include="Properties\DataSources\RemontV2.Models.Ремонт.datasource" />
     <None Include="Properties\DataSources\RemontV2.Models.Роль.datasource" />
     <None Include="Properties\DataSources\RemontV2.Models.Сотрудник.datasource" />
+    <None Include="Properties\DataSources\RemontV2.Models.СтатусРабот.datasource" />
+    <None Include="Properties\DataSources\RemontV2.Models.Услуга.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -245,6 +370,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="RemontV2_TemporaryKey.pfx" />
     <None Include="Resources\add-user.png" />
   </ItemGroup>
   <ItemGroup>
@@ -285,6 +411,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

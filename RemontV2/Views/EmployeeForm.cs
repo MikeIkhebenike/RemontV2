@@ -68,13 +68,15 @@ namespace RemontV2.Views
                 card.BackColor = Color.White;
                 selectedEmployeeCard.Remove(card);
             }
-            if (selectedEmployeeCard.Count > 1)
+            if (selectedEmployeeCard.Count >= 1)
             {
                 ChangePlaceBtn.Visible = true;
+                RemoveEmployeeBtn.Visible = true;
             }
             else
             {
                 ChangePlaceBtn.Visible = false;
+                RemoveEmployeeBtn.Visible = false;
             }
         }
 

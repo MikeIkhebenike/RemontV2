@@ -70,7 +70,7 @@ namespace RemontV2.Views
                 Scard.BackColor = Color.White;
                 selectedRequestCard.Remove(Scard);
             }
-            if (selectedRequestCard.Count > 1)
+            if (selectedRequestCard.Count >= 1)
             {
                 RemoveRequestBtn.Visible = true;
                 ChangeCloseDateBtn.Visible = true;
@@ -169,7 +169,9 @@ namespace RemontV2.Views
 
         private void ChangeCloseDateBtn_Click(object sender, EventArgs e)
         {
-
+            ChangeReqCloseDateForm NewCloseDate = new ChangeReqCloseDateForm();
+            DialogResult dialogResult = NewCloseDate.ShowDialog();
+            SortListView();
         }
 
 

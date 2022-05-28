@@ -32,6 +32,7 @@
             this.qtyStockLbl = new System.Windows.Forms.Label();
             this.supplierNameLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,24 +71,35 @@
             // 
             this.pictureBox1.Image = global::RemontV2.Properties.Resources.picture;
             this.pictureBox1.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(177, 143);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(540, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
+            // 
             // AccessoriesCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CostLbl);
             this.Controls.Add(this.qtyStockLbl);
             this.Controls.Add(this.supplierNameLbl);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AccessoriesCard";
             this.Size = new System.Drawing.Size(800, 150);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -102,5 +114,6 @@
         public System.Windows.Forms.Label CostLbl;
         private System.Windows.Forms.Label qtyStockLbl;
         private System.Windows.Forms.Label supplierNameLbl;
+        public System.Windows.Forms.Label label1;
     }
 }

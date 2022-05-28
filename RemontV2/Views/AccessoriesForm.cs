@@ -49,9 +49,9 @@ namespace RemontV2.Views
         {
             AccessoriesCard Acard = sender as AccessoriesCard;
             selectedAccessoriesCard.Add(Acard);
-            //AddEditAccessoriesForm AeditForm = new AddEditAccessoriesForm();
-            //DialogResult dialogResult = AeditForm.ShowDialog();
-            //SortListView();
+            AccessoriesAddEditForm AccessoriesAEFrm = new AccessoriesAddEditForm();
+            DialogResult dialogResult = AccessoriesAEFrm.ShowDialog();
+            SortListView();
         }
 
         private void Card_Click(object sender, EventArgs e)
@@ -68,13 +68,15 @@ namespace RemontV2.Views
                 Acard.BackColor = Color.White;
                 selectedAccessoriesCard.Remove(Acard);
             }
-            if (selectedAccessoriesCard.Count > 1)
+            if (selectedAccessoriesCard.Count >= 1)
             {
                 ChangePriceBtn.Visible = true;
+                DeleteAccBtn.Visible = true;
             }
             else
             {
                 ChangePriceBtn.Visible = false;
+                DeleteAccBtn.Visible = false;
             }
 
           
@@ -158,6 +160,17 @@ namespace RemontV2.Views
             ChangePriceForm NewPrice = new ChangePriceForm();
             DialogResult dialogResult = NewPrice.ShowDialog();
             SortListView();
+        }
+
+        private void AddAccessoriesBtn_Click(object sender, EventArgs e)
+        {
+            AccessoriesAddEditForm AccessoriesAEFrm = new AccessoriesAddEditForm();
+            DialogResult dialogResult = AccessoriesAEFrm.ShowDialog();
+        }
+
+        private void DeleteAccBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

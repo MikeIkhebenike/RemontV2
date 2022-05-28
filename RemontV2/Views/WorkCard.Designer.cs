@@ -43,7 +43,7 @@
             // 
             this.wkCostLbl.AutoSize = true;
             this.wkCostLbl.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.wkCostLbl.Location = new System.Drawing.Point(289, 57);
+            this.wkCostLbl.Location = new System.Drawing.Point(352, 111);
             this.wkCostLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.wkCostLbl.Name = "wkCostLbl";
             this.wkCostLbl.Size = new System.Drawing.Size(162, 23);
@@ -54,7 +54,7 @@
             // repairTypeLbl
             // 
             this.repairTypeLbl.AutoSize = true;
-            this.repairTypeLbl.Location = new System.Drawing.Point(3, 57);
+            this.repairTypeLbl.Location = new System.Drawing.Point(32, 9);
             this.repairTypeLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.repairTypeLbl.Name = "repairTypeLbl";
             this.repairTypeLbl.Size = new System.Drawing.Size(158, 23);
@@ -64,7 +64,7 @@
             // serviceNameLbl
             // 
             this.serviceNameLbl.AutoSize = true;
-            this.serviceNameLbl.Location = new System.Drawing.Point(289, 13);
+            this.serviceNameLbl.Location = new System.Drawing.Point(352, 9);
             this.serviceNameLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.serviceNameLbl.Name = "serviceNameLbl";
             this.serviceNameLbl.Size = new System.Drawing.Size(73, 23);
@@ -74,61 +74,62 @@
             // workStatusLbl
             // 
             this.workStatusLbl.AutoSize = true;
-            this.workStatusLbl.Location = new System.Drawing.Point(710, 57);
+            this.workStatusLbl.Location = new System.Drawing.Point(679, 59);
             this.workStatusLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.workStatusLbl.Name = "workStatusLbl";
-            this.workStatusLbl.Size = new System.Drawing.Size(118, 23);
+            this.workStatusLbl.Size = new System.Drawing.Size(66, 23);
             this.workStatusLbl.TabIndex = 26;
-            this.workStatusLbl.Text = "Статус работ: ";
+            this.workStatusLbl.Text = "Статус:";
             // 
             // employeeIDLbl
             // 
             this.employeeIDLbl.AutoSize = true;
-            this.employeeIDLbl.Location = new System.Drawing.Point(3, 101);
+            this.employeeIDLbl.Location = new System.Drawing.Point(32, 111);
             this.employeeIDLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.employeeIDLbl.Name = "employeeIDLbl";
-            this.employeeIDLbl.Size = new System.Drawing.Size(219, 23);
+            this.employeeIDLbl.Size = new System.Drawing.Size(138, 23);
             this.employeeIDLbl.TabIndex = 27;
-            this.employeeIDLbl.Text = "Ответственный за работу:  ";
+            this.employeeIDLbl.Text = "Ответственный: ";
             // 
             // reqIDLbl
             // 
             this.reqIDLbl.AutoSize = true;
+            this.reqIDLbl.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.reqIDLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.reqIDLbl.Location = new System.Drawing.Point(3, 13);
+            this.reqIDLbl.Location = new System.Drawing.Point(3, 53);
             this.reqIDLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.reqIDLbl.Name = "reqIDLbl";
-            this.reqIDLbl.Size = new System.Drawing.Size(129, 23);
+            this.reqIDLbl.Size = new System.Drawing.Size(22, 29);
             this.reqIDLbl.TabIndex = 19;
-            this.reqIDLbl.Text = "Номер заявки:  ";
+            this.reqIDLbl.Text = "1";
             // 
             // wkCloseLbl
             // 
             this.wkCloseLbl.AutoSize = true;
             this.wkCloseLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wkCloseLbl.Location = new System.Drawing.Point(638, 101);
+            this.wkCloseLbl.Location = new System.Drawing.Point(679, 111);
             this.wkCloseLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.wkCloseLbl.Name = "wkCloseLbl";
-            this.wkCloseLbl.Size = new System.Drawing.Size(195, 23);
+            this.wkCloseLbl.Size = new System.Drawing.Size(149, 23);
             this.wkCloseLbl.TabIndex = 20;
-            this.wkCloseLbl.Text = "Дата завершения работ: ";
+            this.wkCloseLbl.Text = "завершение работ:";
             // 
             // wkOpenLbl
             // 
             this.wkOpenLbl.AutoSize = true;
             this.wkOpenLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.wkOpenLbl.Location = new System.Drawing.Point(668, 13);
+            this.wkOpenLbl.Location = new System.Drawing.Point(679, 9);
             this.wkOpenLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.wkOpenLbl.Name = "wkOpenLbl";
-            this.wkOpenLbl.Size = new System.Drawing.Size(165, 23);
+            this.wkOpenLbl.Size = new System.Drawing.Size(115, 23);
             this.wkOpenLbl.TabIndex = 21;
-            this.wkOpenLbl.Text = "Дата начала работ:  ";
+            this.wkOpenLbl.Text = "начало работ:";
             // 
             // usedAccessoriesLbl
             // 
             this.usedAccessoriesLbl.AutoSize = true;
             this.usedAccessoriesLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.usedAccessoriesLbl.Location = new System.Drawing.Point(289, 100);
+            this.usedAccessoriesLbl.Location = new System.Drawing.Point(32, 59);
             this.usedAccessoriesLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.usedAccessoriesLbl.Name = "usedAccessoriesLbl";
             this.usedAccessoriesLbl.Size = new System.Drawing.Size(266, 23);
