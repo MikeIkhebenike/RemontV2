@@ -29,33 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorksForm));
-            this.AddRequestBtn = new System.Windows.Forms.PictureBox();
+            this.AddWorkBtn = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ChangeCloseDateBtn = new System.Windows.Forms.Button();
-            this.RemoveRequestBtn = new System.Windows.Forms.Button();
+            this.ChangeStatusBtn = new System.Windows.Forms.Button();
+            this.RemoveWorkBtn = new System.Windows.Forms.Button();
             this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.descCheckBox = new System.Windows.Forms.CheckBox();
-            this.RequestsflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.WorksflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.AddRequestBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddWorkBtn)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // AddRequestBtn
+            // AddWorkBtn
             // 
-            this.AddRequestBtn.Image = global::RemontV2.Properties.Resources.add;
-            this.AddRequestBtn.Location = new System.Drawing.Point(759, 1);
-            this.AddRequestBtn.Name = "AddRequestBtn";
-            this.AddRequestBtn.Size = new System.Drawing.Size(62, 44);
-            this.AddRequestBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.AddRequestBtn.TabIndex = 31;
-            this.AddRequestBtn.TabStop = false;
+            this.AddWorkBtn.Image = global::RemontV2.Properties.Resources.add;
+            this.AddWorkBtn.Location = new System.Drawing.Point(759, 1);
+            this.AddWorkBtn.Name = "AddWorkBtn";
+            this.AddWorkBtn.Size = new System.Drawing.Size(62, 44);
+            this.AddWorkBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AddWorkBtn.TabIndex = 31;
+            this.AddWorkBtn.TabStop = false;
+            this.AddWorkBtn.Click += new System.EventHandler(this.AddWorkBtn_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ChangeCloseDateBtn);
-            this.panel1.Controls.Add(this.RemoveRequestBtn);
+            this.panel1.Controls.Add(this.ChangeStatusBtn);
+            this.panel1.Controls.Add(this.RemoveWorkBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 467);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
@@ -63,44 +64,50 @@
             this.panel1.Size = new System.Drawing.Size(833, 45);
             this.panel1.TabIndex = 30;
             // 
-            // ChangeCloseDateBtn
+            // ChangeStatusBtn
             // 
-            this.ChangeCloseDateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
-            this.ChangeCloseDateBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChangeCloseDateBtn.Location = new System.Drawing.Point(14, 0);
-            this.ChangeCloseDateBtn.Margin = new System.Windows.Forms.Padding(5);
-            this.ChangeCloseDateBtn.Name = "ChangeCloseDateBtn";
-            this.ChangeCloseDateBtn.Size = new System.Drawing.Size(225, 42);
-            this.ChangeCloseDateBtn.TabIndex = 3;
-            this.ChangeCloseDateBtn.Text = "Изменить дату закрытия";
-            this.ChangeCloseDateBtn.UseVisualStyleBackColor = false;
-            this.ChangeCloseDateBtn.Visible = false;
+            this.ChangeStatusBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ChangeStatusBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeStatusBtn.ForeColor = System.Drawing.Color.White;
+            this.ChangeStatusBtn.Location = new System.Drawing.Point(14, 0);
+            this.ChangeStatusBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.ChangeStatusBtn.Name = "ChangeStatusBtn";
+            this.ChangeStatusBtn.Size = new System.Drawing.Size(225, 42);
+            this.ChangeStatusBtn.TabIndex = 3;
+            this.ChangeStatusBtn.Text = "Изменить дату закрытия";
+            this.ChangeStatusBtn.UseVisualStyleBackColor = false;
+            this.ChangeStatusBtn.Visible = false;
+            this.ChangeStatusBtn.Click += new System.EventHandler(this.ChangeStatusBtn_Click);
             // 
-            // RemoveRequestBtn
+            // RemoveWorkBtn
             // 
-            this.RemoveRequestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
-            this.RemoveRequestBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RemoveRequestBtn.Location = new System.Drawing.Point(594, 0);
-            this.RemoveRequestBtn.Margin = new System.Windows.Forms.Padding(5);
-            this.RemoveRequestBtn.Name = "RemoveRequestBtn";
-            this.RemoveRequestBtn.Size = new System.Drawing.Size(225, 42);
-            this.RemoveRequestBtn.TabIndex = 2;
-            this.RemoveRequestBtn.Text = "Удалить заявку";
-            this.RemoveRequestBtn.UseVisualStyleBackColor = false;
-            this.RemoveRequestBtn.Visible = false;
+            this.RemoveWorkBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.RemoveWorkBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveWorkBtn.ForeColor = System.Drawing.Color.White;
+            this.RemoveWorkBtn.Location = new System.Drawing.Point(594, 0);
+            this.RemoveWorkBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.RemoveWorkBtn.Name = "RemoveWorkBtn";
+            this.RemoveWorkBtn.Size = new System.Drawing.Size(225, 42);
+            this.RemoveWorkBtn.TabIndex = 2;
+            this.RemoveWorkBtn.Text = "Удалить заявку";
+            this.RemoveWorkBtn.UseVisualStyleBackColor = false;
+            this.RemoveWorkBtn.Visible = false;
+            this.RemoveWorkBtn.Click += new System.EventHandler(this.RemoveWorkBtn_Click);
             // 
             // sortComboBox
             // 
             this.sortComboBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sortComboBox.FormattingEnabled = true;
             this.sortComboBox.Items.AddRange(new object[] {
-            "Дата открытия",
-            "Дата закрытия"});
+            "Ответственный за работу",
+            "Характер ремонта",
+            "Дата начала"});
             this.sortComboBox.Location = new System.Drawing.Point(283, 10);
             this.sortComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.sortComboBox.Name = "sortComboBox";
             this.sortComboBox.Size = new System.Drawing.Size(167, 29);
             this.sortComboBox.TabIndex = 27;
+            this.sortComboBox.SelectedIndexChanged += new System.EventHandler(this.sortComboBox_SelectedIndexChanged);
             // 
             // searchTextBox
             // 
@@ -110,6 +117,7 @@
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(263, 27);
             this.searchTextBox.TabIndex = 26;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // descCheckBox
             // 
@@ -122,16 +130,17 @@
             this.descCheckBox.TabIndex = 28;
             this.descCheckBox.Text = "По убыванию";
             this.descCheckBox.UseVisualStyleBackColor = true;
+            this.descCheckBox.CheckedChanged += new System.EventHandler(this.descCheckBox_CheckedChanged);
             // 
-            // RequestsflowLayoutPanel
+            // WorksflowLayoutPanel
             // 
-            this.RequestsflowLayoutPanel.AutoScroll = true;
-            this.RequestsflowLayoutPanel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RequestsflowLayoutPanel.Location = new System.Drawing.Point(0, 53);
-            this.RequestsflowLayoutPanel.Margin = new System.Windows.Forms.Padding(5);
-            this.RequestsflowLayoutPanel.Name = "RequestsflowLayoutPanel";
-            this.RequestsflowLayoutPanel.Size = new System.Drawing.Size(833, 410);
-            this.RequestsflowLayoutPanel.TabIndex = 25;
+            this.WorksflowLayoutPanel.AutoScroll = true;
+            this.WorksflowLayoutPanel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WorksflowLayoutPanel.Location = new System.Drawing.Point(0, 53);
+            this.WorksflowLayoutPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.WorksflowLayoutPanel.Name = "WorksflowLayoutPanel";
+            this.WorksflowLayoutPanel.Size = new System.Drawing.Size(833, 410);
+            this.WorksflowLayoutPanel.TabIndex = 25;
             // 
             // filterComboBox
             // 
@@ -142,26 +151,28 @@
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(131, 29);
             this.filterComboBox.TabIndex = 29;
+            this.filterComboBox.SelectedIndexChanged += new System.EventHandler(this.filterComboBox_SelectedIndexChanged);
             // 
             // WorksForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(833, 512);
-            this.Controls.Add(this.AddRequestBtn);
+            this.Controls.Add(this.AddWorkBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sortComboBox);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.descCheckBox);
-            this.Controls.Add(this.RequestsflowLayoutPanel);
+            this.Controls.Add(this.WorksflowLayoutPanel);
             this.Controls.Add(this.filterComboBox);
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "WorksForm";
             this.Text = "WorksForm";
-            ((System.ComponentModel.ISupportInitialize)(this.AddRequestBtn)).EndInit();
+            this.Load += new System.EventHandler(this.WorksForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.AddWorkBtn)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,14 +181,14 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox AddRequestBtn;
+        private System.Windows.Forms.PictureBox AddWorkBtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button ChangeCloseDateBtn;
-        private System.Windows.Forms.Button RemoveRequestBtn;
+        private System.Windows.Forms.Button ChangeStatusBtn;
+        private System.Windows.Forms.Button RemoveWorkBtn;
         private System.Windows.Forms.ComboBox sortComboBox;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.CheckBox descCheckBox;
-        private System.Windows.Forms.FlowLayoutPanel RequestsflowLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel WorksflowLayoutPanel;
         private System.Windows.Forms.ComboBox filterComboBox;
     }
 }

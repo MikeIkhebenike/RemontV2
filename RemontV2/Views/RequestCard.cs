@@ -24,12 +24,12 @@ namespace RemontV2.Views
             reqNumberLbl.Text = request.ID_заявки.ToString();
             FioLbl.Text ="ФИО: "+ request.ФИО_клиента;
             ReqAdresslLbl.Text ="Адрес: "+ request.Адрес_клиента;
-            phoneClientLbl.Text = "Телефон: " + request.Контактный_номер.ToString();
+            phoneClientLbl.Text =  request.Контактный_номер.ToString();
             ClientTechLbl.Text ="Техника: "+ request.Техника_клиента.ToString();
             ReqDescriptionLbl.Text = "Проблема: " + request.Описание_проблемы;
             techqtyLbl.Text = "Количество: " + request.Количество.ToString();
-            reqOpenLbl.Text = "Открыта: " + request.ДатаОткр.ToString();
-            reqCloseLbl.Text = "Закрыта: "+ request.ДатаЗакр.ToString();
+            reqOpenLbl.Text = request.ДатаОткр.ToString();
+            reqCloseLbl.Text = request.ДатаЗакр.ToString();
                 
         }
 

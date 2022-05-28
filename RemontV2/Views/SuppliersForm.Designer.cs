@@ -64,8 +64,9 @@
             // 
             // RemoveSupplierBtn
             // 
-            this.RemoveSupplierBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
+            this.RemoveSupplierBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.RemoveSupplierBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveSupplierBtn.ForeColor = System.Drawing.Color.White;
             this.RemoveSupplierBtn.Location = new System.Drawing.Point(5, 2);
             this.RemoveSupplierBtn.Margin = new System.Windows.Forms.Padding(5);
             this.RemoveSupplierBtn.Name = "RemoveSupplierBtn";

@@ -228,11 +228,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(46, 88);
+            this.label1.Location = new System.Drawing.Point(61, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 19);
+            this.label1.Size = new System.Drawing.Size(62, 19);
             this.label1.TabIndex = 1;
-            this.label1.Text = "UserName";
+            this.label1.Text = "Admin";
             // 
             // pictureBox1
             // 

@@ -7,8 +7,9 @@ namespace RemontV2.Views
 {
     public partial class AdminForm : Form
     {
+        //Используется библиотека для "рисования" формы
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
+        //Метод, который создает закругленные рамки для формы
         private static extern IntPtr CreateRoundRectRgn
     (
         int nLeftRect,
@@ -22,17 +23,20 @@ namespace RemontV2.Views
         public AdminForm()
         {
             InitializeComponent();
+            //Добавление округлых границ для формы
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             PnlNav.Height = EmployeeListBtn.Height;
             PnlNav.Top = EmployeeListBtn.Top;
             PnlNav.Left = EmployeeListBtn.Left;
             EmployeeListBtn.BackColor = Color.FromArgb(93, 118, 203);
 
-            //Показ данных формы через панель
+            //Изменение заголовка формы
             lblTitle.Text = "Список сотрудников";
             this.NewFormPanelLoader.Controls.Clear();
+            //Предварительна загрузка формы со списком сотрудников при запуске формы
             EmployeeForm EmployeePanel = new EmployeeForm()
             {
+                //Перечисление свойств дизайна формы
                 Dock = DockStyle.Fill,
                 TopLevel = false,
                 TopMost = true,
@@ -47,15 +51,15 @@ namespace RemontV2.Views
         {
 
         }
-
+        //Обработка события нажатия на кнопку "Список сотрудников"
         private void EmployeeListBtn_Click(object sender, EventArgs e)
         {
-            //Цвет и вспомогательная полоса для навигации при выбранной форме
+            //Цвет кнопки и вспомогательная полоса для навигации при нажатии на кнопку для перехода к нужной форме
             PnlNav.Height = EmployeeListBtn.Height;
             PnlNav.Top = EmployeeListBtn.Top;
             PnlNav.Left = EmployeeListBtn.Left;
             EmployeeListBtn.BackColor = Color.FromArgb(93, 118, 203);
-            //Показ данных формы через панель
+    
             lblTitle.Text = "Список сотрудников";
             this.NewFormPanelLoader.Controls.Clear();
             EmployeeForm EmployeePanel = new EmployeeForm() 
@@ -65,12 +69,14 @@ namespace RemontV2.Views
                 TopMost = true
             };
             EmployeePanel.FormBorderStyle = FormBorderStyle.None;
+            //Загрузка формы EmployeeForm в элемент NewFormPanelLoader формы AdminForm
             this.NewFormPanelLoader.Controls.Add(EmployeePanel);
             EmployeePanel.Show();
         }
-
+        //Обработка события нажатия на кнопку "Список заявок"
         private void RequestsBtn_Click(object sender, EventArgs e)
         {
+            //Цвет кнопки и вспомогательная полоса для навигации при нажатии на кнопку для перехода к нужной форме
             PnlNav.Height = RequestsBtn.Height;
             PnlNav.Top = RequestsBtn.Top;
             PnlNav.Left = RequestsBtn.Left;
@@ -118,6 +124,15 @@ namespace RemontV2.Views
 
             lblTitle.Text = "Список работ";
             this.NewFormPanelLoader.Controls.Clear();
+            WorksForm WrkForm = new WorksForm()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+            WrkForm.FormBorderStyle = FormBorderStyle.None;
+            this.NewFormPanelLoader.Controls.Add(WrkForm);
+            WrkForm.Show();
         }
 
         private void SuppliersBtn_Click(object sender, EventArgs e)
@@ -149,6 +164,15 @@ namespace RemontV2.Views
 
             lblTitle.Text = "Список запросов на поставку";
             this.NewFormPanelLoader.Controls.Clear();
+            ListOfReqsForm ListReqsPanel = new ListOfReqsForm()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+            ListReqsPanel.FormBorderStyle = FormBorderStyle.None;
+            this.NewFormPanelLoader.Controls.Add(ListReqsPanel);
+            ListReqsPanel.Show();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -156,8 +180,9 @@ namespace RemontV2.Views
             AuthFRM ATF = new AuthFRM();
             this.Close();
             ATF.Show();
+            MessageBox.Show("Вы вышли из учетной записи!");
         }
-
+        //кнопка уходит из фокуса и принимает изначальный цвет
         private void EmployeeListBtn_Leave(object sender, EventArgs e)
         {
             EmployeeListBtn.BackColor = Color.FromArgb(153, 180, 209);

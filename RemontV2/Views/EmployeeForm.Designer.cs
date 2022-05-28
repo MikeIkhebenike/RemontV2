@@ -92,8 +92,9 @@
             // 
             // ChangePlaceBtn
             // 
-            this.ChangePlaceBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
+            this.ChangePlaceBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ChangePlaceBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangePlaceBtn.ForeColor = System.Drawing.Color.White;
             this.ChangePlaceBtn.Location = new System.Drawing.Point(12, 1);
             this.ChangePlaceBtn.Margin = new System.Windows.Forms.Padding(5);
             this.ChangePlaceBtn.Name = "ChangePlaceBtn";
@@ -127,8 +128,9 @@
             // 
             // RemoveEmployeeBtn
             // 
-            this.RemoveEmployeeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
+            this.RemoveEmployeeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.RemoveEmployeeBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveEmployeeBtn.ForeColor = System.Drawing.Color.White;
             this.RemoveEmployeeBtn.Location = new System.Drawing.Point(262, 1);
             this.RemoveEmployeeBtn.Margin = new System.Windows.Forms.Padding(5);
             this.RemoveEmployeeBtn.Name = "RemoveEmployeeBtn";

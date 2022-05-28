@@ -20,8 +20,8 @@ namespace RemontV2.Views
 
         public void GenerateDataToSupplierCard(Поставщик supplier)
         {
-
-            supplierNameLbl.Text = "Компания: "+ supplier.Наименование;
+            label1.Text = "Компания: ";
+            supplierNameLbl.Text = supplier.Наименование;
             adresslLbl.Text = "Адрес: " + supplier.Адрес.ToString();
 
         }

@@ -14,10 +14,14 @@ namespace RemontV2.Views
 
         public void GenerateDataToAccessoriesCard(Комплектующее accessories)
         {
+            label1.Text = accessories.Наименование;
             pictureBox1.ImageLocation = accessories.Изображение;
             supplierNameLbl.Text = accessories.Поставщик.Наименование + " | " + accessories.Наименование;
             qtyStockLbl.Text =  accessories.КоличествоВналич.ToString() + " в наличии";
-            CostLbl.Text = accessories.СтоимостьШт.ToString() + " руб.";
+            CostLbl.Text = accessories.СтоимостьШт.ToString();
+            label2.Text = " руб.";
+
+
 
             if (qtyStockLbl.Text == ""| qtyStockLbl.Text == "0")
             {
@@ -25,5 +29,9 @@ namespace RemontV2.Views
             }
         }
 
+        private void AccessoriesCard_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelLogIn = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ShutDownBtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ButExit = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@
             this.labelRole.ForeColor = System.Drawing.Color.Red;
             this.labelRole.Location = new System.Drawing.Point(117, 255);
             this.labelRole.Name = "labelRole";
-            this.labelRole.Size = new System.Drawing.Size(0, 22);
+            this.labelRole.Size = new System.Drawing.Size(0, 26);
             this.labelRole.TabIndex = 26;
             // 
             // labelPassword
@@ -64,7 +65,7 @@
             this.labelPassword.ForeColor = System.Drawing.Color.Red;
             this.labelPassword.Location = new System.Drawing.Point(117, 190);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(0, 22);
+            this.labelPassword.Size = new System.Drawing.Size(0, 26);
             this.labelPassword.TabIndex = 25;
             // 
             // labelLogIn
@@ -74,20 +75,36 @@
             this.labelLogIn.ForeColor = System.Drawing.Color.Red;
             this.labelLogIn.Location = new System.Drawing.Point(117, 120);
             this.labelLogIn.Name = "labelLogIn";
-            this.labelLogIn.Size = new System.Drawing.Size(0, 22);
+            this.labelLogIn.Size = new System.Drawing.Size(0, 26);
             this.labelLogIn.TabIndex = 24;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.ShutDownBtn);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(480, 88);
             this.panel1.TabIndex = 22;
+            // 
+            // ShutDownBtn
+            // 
+            this.ShutDownBtn.FlatAppearance.BorderSize = 0;
+            this.ShutDownBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShutDownBtn.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShutDownBtn.ForeColor = System.Drawing.Color.Red;
+            this.ShutDownBtn.Location = new System.Drawing.Point(435, 1);
+            this.ShutDownBtn.Name = "ShutDownBtn";
+            this.ShutDownBtn.Size = new System.Drawing.Size(42, 48);
+            this.ShutDownBtn.TabIndex = 21;
+            this.ShutDownBtn.Text = "X";
+            this.ShutDownBtn.UseVisualStyleBackColor = true;
+            this.ShutDownBtn.Click += new System.EventHandler(this.ShutDownBtn_Click);
             // 
             // pictureBox2
             // 
@@ -108,7 +125,7 @@
             this.label3.Location = new System.Drawing.Point(196, 30);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 22);
+            this.label3.Size = new System.Drawing.Size(129, 26);
             this.label3.TabIndex = 0;
             this.label3.Text = "Авторизация";
             // 
@@ -125,6 +142,7 @@
             this.ButExit.TabIndex = 20;
             this.ButExit.Text = "Закрыть";
             this.ButExit.UseVisualStyleBackColor = false;
+            this.ButExit.Click += new System.EventHandler(this.ButExit_Click);
             // 
             // LoginBtn
             // 
@@ -146,7 +164,7 @@
             this.LoginTxt.Location = new System.Drawing.Point(113, 151);
             this.LoginTxt.Margin = new System.Windows.Forms.Padding(6);
             this.LoginTxt.Name = "LoginTxt";
-            this.LoginTxt.Size = new System.Drawing.Size(292, 31);
+            this.LoginTxt.Size = new System.Drawing.Size(292, 34);
             this.LoginTxt.TabIndex = 18;
             // 
             // PassTxt
@@ -154,7 +172,8 @@
             this.PassTxt.Location = new System.Drawing.Point(113, 216);
             this.PassTxt.Margin = new System.Windows.Forms.Padding(6);
             this.PassTxt.Name = "PassTxt";
-            this.PassTxt.Size = new System.Drawing.Size(292, 31);
+            this.PassTxt.PasswordChar = '*';
+            this.PassTxt.Size = new System.Drawing.Size(292, 34);
             this.PassTxt.TabIndex = 19;
             // 
             // label2
@@ -164,7 +183,7 @@
             this.label2.Location = new System.Drawing.Point(17, 219);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 22);
+            this.label2.Size = new System.Drawing.Size(87, 26);
             this.label2.TabIndex = 16;
             this.label2.Text = "Пароль:";
             // 
@@ -175,7 +194,7 @@
             this.label1.Location = new System.Drawing.Point(17, 151);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 22);
+            this.label1.Size = new System.Drawing.Size(75, 26);
             this.label1.TabIndex = 17;
             this.label1.Text = "Логин:";
             // 
@@ -189,11 +208,11 @@
             this.pictureBoxEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxEye.TabIndex = 23;
             this.pictureBoxEye.TabStop = false;
+            this.pictureBoxEye.Click += new System.EventHandler(this.pictureBoxEye_Click);
             // 
             // AuthFRM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(480, 363);
             this.Controls.Add(this.labelRole);
@@ -207,7 +226,7 @@
             this.Controls.Add(this.PassTxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -237,6 +256,7 @@
         private System.Windows.Forms.TextBox PassTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ShutDownBtn;
     }
 }
 
