@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestsForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ChangeCloseDateBtn = new System.Windows.Forms.Button();
             this.RemoveRequestBtn = new System.Windows.Forms.Button();
             this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.descCheckBox = new System.Windows.Forms.CheckBox();
             this.RequestsflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
-            this.ChangeCloseDateBtn = new System.Windows.Forms.Button();
             this.AddRequestBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddRequestBtn)).BeginInit();
@@ -53,10 +53,26 @@
             this.panel1.Size = new System.Drawing.Size(833, 45);
             this.panel1.TabIndex = 22;
             // 
+            // ChangeCloseDateBtn
+            // 
+            this.ChangeCloseDateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ChangeCloseDateBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeCloseDateBtn.ForeColor = System.Drawing.Color.White;
+            this.ChangeCloseDateBtn.Location = new System.Drawing.Point(14, 0);
+            this.ChangeCloseDateBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.ChangeCloseDateBtn.Name = "ChangeCloseDateBtn";
+            this.ChangeCloseDateBtn.Size = new System.Drawing.Size(225, 42);
+            this.ChangeCloseDateBtn.TabIndex = 3;
+            this.ChangeCloseDateBtn.Text = "Изменить дату закрытия";
+            this.ChangeCloseDateBtn.UseVisualStyleBackColor = false;
+            this.ChangeCloseDateBtn.Visible = false;
+            this.ChangeCloseDateBtn.Click += new System.EventHandler(this.ChangeCloseDateBtn_Click);
+            // 
             // RemoveRequestBtn
             // 
-            this.RemoveRequestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
+            this.RemoveRequestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.RemoveRequestBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveRequestBtn.ForeColor = System.Drawing.Color.White;
             this.RemoveRequestBtn.Location = new System.Drawing.Point(594, 0);
             this.RemoveRequestBtn.Margin = new System.Windows.Forms.Padding(5);
             this.RemoveRequestBtn.Name = "RemoveRequestBtn";
@@ -124,20 +140,6 @@
             this.filterComboBox.Size = new System.Drawing.Size(131, 29);
             this.filterComboBox.TabIndex = 21;
             this.filterComboBox.SelectedIndexChanged += new System.EventHandler(this.filterComboBox_SelectedIndexChanged);
-            // 
-            // ChangeCloseDateBtn
-            // 
-            this.ChangeCloseDateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(117)))), ((int)(((byte)(238)))));
-            this.ChangeCloseDateBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChangeCloseDateBtn.Location = new System.Drawing.Point(14, 0);
-            this.ChangeCloseDateBtn.Margin = new System.Windows.Forms.Padding(5);
-            this.ChangeCloseDateBtn.Name = "ChangeCloseDateBtn";
-            this.ChangeCloseDateBtn.Size = new System.Drawing.Size(225, 42);
-            this.ChangeCloseDateBtn.TabIndex = 3;
-            this.ChangeCloseDateBtn.Text = "Изменить дату закрытия";
-            this.ChangeCloseDateBtn.UseVisualStyleBackColor = false;
-            this.ChangeCloseDateBtn.Visible = false;
-            this.ChangeCloseDateBtn.Click += new System.EventHandler(this.ChangeCloseDateBtn_Click);
             // 
             // AddRequestBtn
             // 

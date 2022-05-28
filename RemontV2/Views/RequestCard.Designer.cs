@@ -42,7 +42,7 @@
             // ReqAdresslLbl
             // 
             this.ReqAdresslLbl.AutoSize = true;
-            this.ReqAdresslLbl.Location = new System.Drawing.Point(29, 73);
+            this.ReqAdresslLbl.Location = new System.Drawing.Point(31, 73);
             this.ReqAdresslLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ReqAdresslLbl.Name = "ReqAdresslLbl";
             this.ReqAdresslLbl.Size = new System.Drawing.Size(132, 23);
@@ -64,7 +64,7 @@
             // 
             this.FioLbl.AutoSize = true;
             this.FioLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FioLbl.Location = new System.Drawing.Point(29, 9);
+            this.FioLbl.Location = new System.Drawing.Point(31, 9);
             this.FioLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.FioLbl.Name = "FioLbl";
             this.FioLbl.Size = new System.Drawing.Size(121, 23);
@@ -94,7 +94,7 @@
             // phoneClientLbl
             // 
             this.phoneClientLbl.AutoSize = true;
-            this.phoneClientLbl.Location = new System.Drawing.Point(29, 43);
+            this.phoneClientLbl.Location = new System.Drawing.Point(31, 43);
             this.phoneClientLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.phoneClientLbl.Name = "phoneClientLbl";
             this.phoneClientLbl.Size = new System.Drawing.Size(88, 23);
@@ -105,23 +105,23 @@
             // 
             this.reqOpenLbl.AutoSize = true;
             this.reqOpenLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.reqOpenLbl.Location = new System.Drawing.Point(642, 9);
+            this.reqOpenLbl.Location = new System.Drawing.Point(704, 9);
             this.reqOpenLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.reqOpenLbl.Name = "reqOpenLbl";
-            this.reqOpenLbl.Size = new System.Drawing.Size(188, 23);
+            this.reqOpenLbl.Size = new System.Drawing.Size(124, 23);
             this.reqOpenLbl.TabIndex = 17;
-            this.reqOpenLbl.Text = "Дата открытия заявки: ";
+            this.reqOpenLbl.Text = "Дата открытия";
             // 
             // reqCloseLbl
             // 
             this.reqCloseLbl.AutoSize = true;
             this.reqCloseLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.reqCloseLbl.Location = new System.Drawing.Point(644, 73);
+            this.reqCloseLbl.Location = new System.Drawing.Point(704, 73);
             this.reqCloseLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.reqCloseLbl.Name = "reqCloseLbl";
-            this.reqCloseLbl.Size = new System.Drawing.Size(186, 23);
+            this.reqCloseLbl.Size = new System.Drawing.Size(122, 23);
             this.reqCloseLbl.TabIndex = 17;
-            this.reqCloseLbl.Text = "Дата закрытия заявки: ";
+            this.reqCloseLbl.Text = "Дата закрытия";
             // 
             // reqNumberLbl
             // 

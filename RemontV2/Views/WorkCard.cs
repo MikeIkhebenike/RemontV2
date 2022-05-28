@@ -17,19 +17,32 @@ namespace RemontV2.Views
         public WorkCard()
         {
             InitializeComponent();
+            reqIDLbl.AutoSize = false;
+            reqIDLbl.Paint += reqIDLbl_Paint;
+        }
+
+        private void reqIDLbl_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.Clear(this.BackColor);
+            e.Graphics.RotateTransform(-90);
+            SizeF textSize = e.Graphics.MeasureString(reqIDLbl.Text, reqIDLbl.Font);
+            reqIDLbl.Width = (int)textSize.Height + 2;
+            reqIDLbl.Height = (int)textSize.Width + 2;
+            e.Graphics.TranslateTransform(-reqIDLbl.Height / 2, reqIDLbl.Width / 2);
+            e.Graphics.DrawString(reqIDLbl.Text, reqIDLbl.Font, Brushes.Black, -(textSize.Width / 2), -(textSize.Height / 2));
         }
 
         public void GenerateDataToWorkCard(Ремонт work)
         {
             reqIDLbl.Text = work.Заявка.ID_заявки.ToString();
             repairTypeLbl.Text = "Характер ремонта: " + work.Характер_ремонта;
-            employeeIDLbl.Text = "Ответственный за работу: " + work.Сотрудник.ФИО;
+            employeeIDLbl.Text = "Ответственный: " + work.Сотрудник.ФИО;
             serviceNameLbl.Text = "Услуга: " + work.Услуга.Наименование.ToString();
             wkCostLbl.Text = "Стоимость: " + work.Комплектующее.СтоимостьШт.ToString();
             usedAccessoriesLbl.Text = "Использовалось: " + work.Комплектующее.Наименование;
-            wkOpenLbl.Text = "Количество: " + work.ДатаНач.ToString();
-            wkCloseLbl.Text = "Открыта: " + work.ДатаЗаверш.ToString();
-            workStatusLbl.Text = "Закрыта: " + work.СтатусРабот.Наименование.ToString();
+            wkOpenLbl.Text =  work.ДатаНач.ToString();
+            wkCloseLbl.Text =  work.ДатаЗаверш.ToString();
+            workStatusLbl.Text = "Статус: " + work.СтатусРабот.Наименование.ToString();
 
         }
 

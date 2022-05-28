@@ -30,23 +30,37 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccessoriesForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ChangePriceBtn = new System.Windows.Forms.Button();
             this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.descCheckBox = new System.Windows.Forms.CheckBox();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.AccessoriesflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.ChangePriceBtn = new System.Windows.Forms.Button();
+            this.AddAccessoriesBtn = new System.Windows.Forms.PictureBox();
+            this.DeleteAccBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddAccessoriesBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.DeleteAccBtn);
             this.panel1.Controls.Add(this.ChangePriceBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 409);
+            this.panel1.Location = new System.Drawing.Point(0, 448);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(817, 64);
+            this.panel1.Size = new System.Drawing.Size(833, 64);
             this.panel1.TabIndex = 0;
+            // 
+            // ChangePriceBtn
+            // 
+            this.ChangePriceBtn.Location = new System.Drawing.Point(12, 16);
+            this.ChangePriceBtn.Name = "ChangePriceBtn";
+            this.ChangePriceBtn.Size = new System.Drawing.Size(210, 33);
+            this.ChangePriceBtn.TabIndex = 0;
+            this.ChangePriceBtn.Text = "Изменить стоимость";
+            this.ChangePriceBtn.UseVisualStyleBackColor = true;
+            this.ChangePriceBtn.Click += new System.EventHandler(this.ChangePriceBtn_Click);
             // 
             // sortComboBox
             // 
@@ -89,7 +103,7 @@
             // 
             this.filterComboBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(679, 14);
+            this.filterComboBox.Location = new System.Drawing.Point(628, 14);
             this.filterComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(131, 29);
@@ -100,26 +114,38 @@
             // 
             this.AccessoriesflowLayoutPanel.AutoScroll = true;
             this.AccessoriesflowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AccessoriesflowLayoutPanel.Location = new System.Drawing.Point(0, 63);
+            this.AccessoriesflowLayoutPanel.Location = new System.Drawing.Point(0, 51);
             this.AccessoriesflowLayoutPanel.Name = "AccessoriesflowLayoutPanel";
-            this.AccessoriesflowLayoutPanel.Size = new System.Drawing.Size(817, 346);
+            this.AccessoriesflowLayoutPanel.Size = new System.Drawing.Size(833, 397);
             this.AccessoriesflowLayoutPanel.TabIndex = 12;
             // 
-            // ChangePriceBtn
+            // AddAccessoriesBtn
             // 
-            this.ChangePriceBtn.Location = new System.Drawing.Point(12, 16);
-            this.ChangePriceBtn.Name = "ChangePriceBtn";
-            this.ChangePriceBtn.Size = new System.Drawing.Size(210, 33);
-            this.ChangePriceBtn.TabIndex = 0;
-            this.ChangePriceBtn.Text = "Изменить стоимость";
-            this.ChangePriceBtn.UseVisualStyleBackColor = true;
-            this.ChangePriceBtn.Click += new System.EventHandler(this.ChangePriceBtn_Click);
+            this.AddAccessoriesBtn.Image = global::RemontV2.Properties.Resources.add;
+            this.AddAccessoriesBtn.Location = new System.Drawing.Point(767, 1);
+            this.AddAccessoriesBtn.Name = "AddAccessoriesBtn";
+            this.AddAccessoriesBtn.Size = new System.Drawing.Size(62, 44);
+            this.AddAccessoriesBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AddAccessoriesBtn.TabIndex = 32;
+            this.AddAccessoriesBtn.TabStop = false;
+            this.AddAccessoriesBtn.Click += new System.EventHandler(this.AddAccessoriesBtn_Click);
+            // 
+            // DeleteAccBtn
+            // 
+            this.DeleteAccBtn.Location = new System.Drawing.Point(584, 16);
+            this.DeleteAccBtn.Name = "DeleteAccBtn";
+            this.DeleteAccBtn.Size = new System.Drawing.Size(210, 33);
+            this.DeleteAccBtn.TabIndex = 1;
+            this.DeleteAccBtn.Text = "Удалить";
+            this.DeleteAccBtn.UseVisualStyleBackColor = true;
+            this.DeleteAccBtn.Click += new System.EventHandler(this.DeleteAccBtn_Click);
             // 
             // AccessoriesForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(817, 473);
+            this.ClientSize = new System.Drawing.Size(833, 512);
+            this.Controls.Add(this.AddAccessoriesBtn);
             this.Controls.Add(this.AccessoriesflowLayoutPanel);
             this.Controls.Add(this.sortComboBox);
             this.Controls.Add(this.searchTextBox);
@@ -134,6 +160,7 @@
             this.Text = "AccessoriesForm";
             this.Load += new System.EventHandler(this.AccessoriesForm_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AddAccessoriesBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +175,7 @@
         private System.Windows.Forms.ComboBox filterComboBox;
         private System.Windows.Forms.FlowLayoutPanel AccessoriesflowLayoutPanel;
         private System.Windows.Forms.Button ChangePriceBtn;
+        private System.Windows.Forms.PictureBox AddAccessoriesBtn;
+        private System.Windows.Forms.Button DeleteAccBtn;
     }
 }

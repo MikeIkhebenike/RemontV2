@@ -16,9 +16,11 @@ namespace RemontV2
         {
             InitializeComponent();
         }
+        
 
         private void LoginBtn_Click_1(object sender, EventArgs e)
         {
+            string password = PassTxt.Text;
             if (LoginTxt.Text == "" || PassTxt.Text == "")
             {
                 MessageBox.Show("Введите логин и пароль!");
@@ -31,30 +33,30 @@ namespace RemontV2
                 ATH = this;
                 if (UFN.Сотрудник.ID_роли == 1)
                 {
-                    //LoggedRole ="1" ;
+                    //LoggedRole ="1" 
                     AdminForm FRMadm = new AdminForm();
                     FRMadm.Show();
                     this.Hide();
                     MessageBox.Show("Добро пожаловать в форму администратора!");
                 }
 
-                //else if (UFN.Сотрудник.ID_роли == 2)
-                //{
-                //    //LoggedRole = "2";
-                //    Manager FRMmang = new Manager();
-                //    FRMmang.Show();
-                //    this.Hide();
-                //    MessageBox.Show("Добро пожаловать в форму менеджера!");
-                //}
+                else if (UFN.Сотрудник.ID_роли == 2)
+                {
+                    //LoggedRole = "2"
+                    ManagerForm FRMmang = new ManagerForm();
+                    FRMmang.Show();
+                    this.Hide();
+                    MessageBox.Show("Добро пожаловать в форму менеджера!");
+                }
 
-                //else if (UFN.Сотрудник.ID_роли == 3)
-                //{
-                //    //LoggedRole = "3";
-                //    Engineer FRMeng = new Engineer();
-                //    FRMeng.Show();
-                //    this.Hide();
-                //    MessageBox.Show("Добро пожаловать в форму инженера!");
-                //}
+                else if (UFN.Сотрудник.ID_роли == 3)
+                {
+                    //LoggedRole = "3"
+                    EngineerForm FRMeng = new EngineerForm();
+                    FRMeng.Show();
+                    this.Hide();
+                    MessageBox.Show("Добро пожаловать в форму инженера!");
+                }
 
             }
             else
@@ -64,16 +66,24 @@ namespace RemontV2
             }
         }
 
-        private void ExitBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void LoginTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
 
+        private void ShutDownBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void ButExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBoxEye_Click(object sender, EventArgs e)
+        {
+            PassTxt.UseSystemPasswordChar = false;
+        }
     }
 }
